@@ -1,0 +1,22 @@
+<!--  <form action="/users" accept-charset="UTF-8" method="post">
+    <label for="username">User Name:</label> 
+    <input type="text" id="username" name="user[username]"><br><br>
+    <label for="email">Email:</label>
+    <input type="text" name="user[email]" id="email"><br><br>
+    <label for="Password">Password:</label>
+    <input type="password" id="password" name="user[password]"><br><br>
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <input type="submit" value="Submit">
+ </form> -->
+
+
+<%= form_with model: @user do |f| %>
+    <label for="username">User Name:</label>
+    <%= f.text_field :username %><br><br>
+    <label for="email">Email:</label>
+    <%= f.text_field :email %><br><br>
+    <label for="Password">Password:</label>
+    <%= f.password_field :password %><br><br>
+    <%= f.submit "Create"%>
+<% end %>
+
